@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+{% block content %}
+	<div class="card" style="padding-top: 30px;">
+		<p class="card-title text-center" style="font-size: 20px;">Currently there are {{ count }} ideas</p>
+		<hr>
+		<div class="card-body">
+			<p class="card-text">
+				{% for idea in ideas %}
+					<div class="row" style="padding-bottom:5px;">
+						<div class="col-md-2 text-right">
+							<p class="fa fa-chevron-circle-right"></p>
+						</div>
+						<div class="col-md-10">
+							<div class="row">
+								<div class="col-md-12">{{idea['idea_title']}}</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">{{idea['datestamp']}}</div>
+								<div class="col-md-6">{{idea['timestamp']}}</div>
+							</div>
+
+						</div>
+
+					</div>
+					<hr style="width: 50%;">
+				{% endfor %}
+			</p>
+		</div>
+	</div>
+    
+{% endblock %}
